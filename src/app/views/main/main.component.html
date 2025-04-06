@@ -1,0 +1,90 @@
+<section class="container-fluid carousel-slick mb-5">
+  <ngb-carousel>
+    <ng-template ngbSlide>
+      <div class="slide-one d-flex align-items-center">
+        <article
+          class="row h-50 flex-column align-items-center ms-2 ms-sm-2 ms-lg-5 ps-sm-2 ps-lg-5 pt-md-5">
+          <h2 class="col fs-1">Скидки на травяные чаи</h2>
+          <p class="col pt-2 mb-0 mt-2">Узнай все подробности, заполнив заявку</p>
+          <fieldset class="col">
+            <button routerLink="/products" id="button-scroll" type="button" class="btn btn-primary px-5 scroll-form">
+              Заполнить
+            </button>
+          </fieldset>
+        </article>
+      </div>
+    </ng-template>
+    <ng-template ngbSlide>
+      <div class="slide-two d-flex align-items-center">
+        <article
+          class="col col-md-6 h-50 flex-column align-items-center ms-2 ms-sm-2 ms-lg-5 ps-sm-2 ps-lg-5 pt-md-5 pe-4">
+          <h2 class="col fs-1 pb-5 mb-4">Закажи три пачки чая и получи подарок</h2>
+          <fieldset class="col">
+            <button routerLink="/products" type="button" class="btn btn-primary px-5 scroll-form">Заказать</button>
+          </fieldset>
+        </article>
+      </div>
+    </ng-template>
+    <ng-template ngbSlide>
+      <div class="slide-three d-flex align-items-center">
+        <article
+          class="col col-md-6 h-50 flex-column align-items-center ms-2 ms-sm-2 ms-lg-5 ps-sm-2 ps-lg-5 pt-md-5 pe-4">
+          <h2 class="col fs-1 pb-5 mb-4 lh-1">Попробуй нашу новинку — Вишнёвый марципан</h2>
+          <fieldset class="col">
+            <button routerLink="/products" type="button" class="btn btn-primary px-5 scroll-form">Заказать</button>
+          </fieldset>
+        </article>
+      </div>
+    </ng-template>
+  </ngb-carousel>
+</section>
+
+<section id="form-wrapper" class="row justify-content-center mb-5">
+  <article class="col-12">
+    <h2 class="text-center mb-5">Ответы на часто задаваемые вопросы</h2>
+  </article>
+  <article class="col-12 col-md-10 col-lg-8">
+    <ngb-accordion #acc="ngbAccordion"
+                   activeIds="ngb-panel-0">
+      <ngb-panel title="Собираете ли вы подарочные боксы?">
+        <ng-template ngbPanelContent>
+          Да, у нас есть такая услуга. Мы можем собрать подарочный бокс на любой вкус, объем и
+          стоимость!
+        </ng-template>
+      </ngb-panel>
+      <ngb-panel title="Сколько у вас разновидностей чая?">
+        <ng-template ngbPanelContent>
+          Все разновидности чая представлены на нашей странице.
+        </ng-template>
+      </ngb-panel>
+      <ngb-panel title="В какой срок осуществляется доставка?">
+        <ng-template ngbPanelContent>
+          Доставка осуществляется в течение часа в пределах нашего города. Сроки доставки по
+          области или по россии зависят от транспортных компаний но не более 15 дней.
+        </ng-template>
+      </ngb-panel>
+      <ngb-panel title="У вас обновляется ассортимент?">
+        <ng-template ngbPanelContent>
+          Да, обновление ассортимента чая происходит в конце каждой недели.
+        </ng-template>
+      </ngb-panel>
+      <ngb-panel title="Какого объема у вас пачки чая?">
+        <ng-template ngbPanelContent>
+          Стандартные объёмы - 50гр и 100гр. Но вы можете заказать необходимый Вам объём
+          самостоятельно!
+        </ng-template>
+      </ngb-panel>
+    </ngb-accordion>
+  </article>
+</section>
+
+<ng-template #secondDialog>
+  <h2 matDialogTitle>Посмотрите наши чайные коллекции!</h2>
+  <mat-dialog-content>
+    <p></p>
+  </mat-dialog-content>
+  <mat-dialog-actions align="end">
+    <button mat-button routerLink="/products" matDialogClose color="primary">Смотреть</button>
+    <button mat-button matDialogClose color="primary">Закрыть</button>
+  </mat-dialog-actions>
+</ng-template>

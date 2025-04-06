@@ -1,0 +1,19 @@
+<section class="container-fluid mb-5 d-flex flex-column align-items-center">
+  <h2 class="text-center mb-5">{{product.title}}</h2>
+  <article class="w-75">
+    <figure class="card mb-0 text-center">
+      <a href="assets/images/image-card-1.png" class="image-popup-vertical-fit">
+        <img src="{{product.image}}" class="card-img-top" alt="image-card-1" style="width: 25rem;">
+      </a>
+      <figcaption class="card-body">
+        <p class="card-text">{{product.description}}</p>
+        <p class="card-text">Цена: <strong>{{product.price}} руб.</strong></p>
+        <a [routerLink]="['/order', product.title]" class="btn btn-primary px-5">Заказать</a>
+      </figcaption>
+    </figure>
+  </article>
+</section>
+
+<div class="loader" *ngIf="loader">
+  <mat-spinner ></mat-spinner>
+</div>

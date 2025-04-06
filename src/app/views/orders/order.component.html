@@ -1,0 +1,46 @@
+<section id="order" class="row justify-content-center mb-5 text-append">
+  <article class="col-12 col-sm-12 col-lg-6 hide" *ngIf="isVisibleForm">
+    <article class="col-12 hide">
+      <h2 class="text-center mb-5">Сделать заказ</h2>
+    </article>
+    <form action="" id="form" class="row g-3 mb-5" [formGroup]="orderForms">
+      <fieldset class="col-md-4">
+        <label for="inputName" class="form-label">Имя</label>
+        <input type="text" name="name" class="form-control" id="inputName" formControlName="name">
+      </fieldset>
+      <fieldset class="col-md-4">
+        <label for="inputLastName" class="form-label">Фамилия</label>
+        <input type="text" name="lastName" class="form-control" id="inputLastName" formControlName="last_name">
+      </fieldset>
+      <fieldset class="col-md-4">
+        <label for="inputPhone" class="form-label">Телефон</label>
+        <input type="tel" name="phone" class="form-control" id="inputPhone" formControlName="phone" maxlength="12" (keydown)="preventSpace($event)">
+      </fieldset>
+      <fieldset class="col-md-6">
+        <label for="inputState" class="form-label">Страна</label>
+        <input type="text" name="country" class="form-control" id="inputState" formControlName="country">
+      </fieldset>
+      <fieldset class="col-md-6">
+        <label for="inputIndex" class="form-label">Индекс</label>
+        <input type="number" name="zip" class="form-control" id="inputIndex" maxlength="6" formControlName="zip">
+      </fieldset>
+      <fieldset class="col-md-6">
+        <label for="inputAddress" class="form-label">Адрес</label>
+        <input type="text" name="address" class="form-control" id="inputAddress" formControlName="address">
+      </fieldset>
+      <fieldset class="col-md-6">
+        <label for="inputTea" class="form-label">Чай</label>
+        <input type="text" name="product" class="form-control" id="inputTea" formControlName="product" [readonly]="inputReadonly">
+      </fieldset>
+      <fieldset class="col-md-12">
+        <label for="inputComment" class="form-label">Комментарий к заказу</label>
+        <textarea type="text" name="comment" class="form-control" id="inputComment" formControlName="comment"></textarea>
+      </fieldset>
+      <fieldset class="col-md-12">
+        <button type="submit" class="btn btn-primary px-5" (click)="onSubmit()">Отправить</button>
+        <p class="text-danger mt-2" *ngIf="responseError">{{responseErrorText}}</p>
+      </fieldset>
+    </form>
+  </article>
+    <article class="m-auto fs-2 text-center" *ngIf="!isVisibleForm">Спасибо за заказ!</article>
+</section>

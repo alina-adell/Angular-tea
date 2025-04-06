@@ -1,0 +1,22 @@
+<section class="container-fluid mb-5">
+  <h2 class="text-center mb-5">Наши чайные коллекции</h2>
+  <article class="container-fluid gap-4 d-flex flex-wrap">
+    <figure class="card mb-0" style="width: 25rem;" *ngFor="let product of products; let i = index">
+      <a href="{{product.image}}" class="image-popup-vertical-fit">
+        <img src="{{product.image}}" class="card-img-top" alt="image-card-1">
+      </a>
+      <figcaption class="card-body">
+        <p class="card-title h5">{{product.title}}</p>
+        <p class="card-text">{{product.description | textHidden : !textHidden[i]}}
+          <span class="text-hidden" (click)="isTextHidden(i)">{{textHidden[i] ? 'Скрыть текст' : 'Показать текст'}}</span>
+        </p>
+        <p class="card-text">Цена: <strong>{{product.price}} руб.</strong></p>
+        <a [routerLink]="['/products', product.id]" class="btn btn-primary px-5">Подробнее</a>
+      </figcaption>
+    </figure>
+  </article>
+</section>
+
+<div class="loader" *ngIf="loader">
+  <mat-spinner ></mat-spinner>
+</div>

@@ -1,0 +1,209 @@
+
+// Custom Theming for Angular Material
+// For more information: https://material.angular.io/guide/theming
+@use '@angular/material' as mat;
+// Plus imports for other components in your app.
+
+/* Importing Bootstrap SCSS file. */
+@import 'bootstrap/scss/bootstrap';
+
+// Include the common styles for Angular Material. We include this here so that you only
+// have to load a single css file for Angular Material in your app.
+// Be sure that you only ever include this mixin once!
+@include mat.core();
+
+// Define the palettes for your theme using the Material Design palettes available in palette.scss
+// (imported above). For each palette, you can optionally specify a default, lighter, and darker
+// hue. Available color palettes: https://material.io/design/color/
+$angular-tea-primary: mat.define-palette(mat.$indigo-palette);
+$angular-tea-accent: mat.define-palette(mat.$pink-palette, A200, A100, A400);
+
+// The warn palette is optional (defaults to red).
+$angular-tea-warn: mat.define-palette(mat.$red-palette);
+
+// Create the theme object. A theme consists of configurations for individual
+// theming systems such as "color" or "typography".
+$angular-tea-theme: mat.define-light-theme((
+  color: (
+    primary: $angular-tea-primary,
+    accent: $angular-tea-accent,
+    warn: $angular-tea-warn,
+  )
+));
+
+// Include theme styles for core and each component used in your app.
+// Alternatively, you can import and @include the theme mixins for each component
+// that you are using.
+@include mat.all-component-themes($angular-tea-theme);
+
+.slide-one {
+  height: 640px;
+  background-image: url("assets/images/img-carousel-1.png");
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+.slide-two {
+  height: 640px;
+  background-image: url("assets/images/img-carousel-2.png");
+  background-position: right;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+.slide-three {
+  height: 640px;
+  background-image: url("assets/images/img-carousel-3.png");
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+
+/*Изменение стилей аккордиона */
+.ui-accordion .ui-accordion-header {
+  margin: 8px 0 0 0;
+}
+
+.arrow {
+  position: relative;
+}
+
+.arrow span {
+  position: absolute;
+  right: 24px;
+  top: 20px;
+}
+
+/*Переопределение цветов для библиотеки hover.css*/
+.hvr-bounce-to-bottom {
+  transition: .5s ease;
+}
+.hvr-bounce-to-bottom:before {
+  background: #0d6efd;
+}
+
+.hvr-shutter-in-vertical {
+  background: #004dc1;
+  transition: .4s;
+}
+
+.hvr-shutter-in-vertical:before {
+  background: #0d6efd;
+}
+
+.hvr-push {
+  transition: .4s;
+}
+
+.hvr-radial-out {
+  background: #0d6efd;
+  transition: .4s;
+}
+
+.hvr-radial-out:before {
+  background: #004dc1;
+}
+
+/*Применяю цвет текста для ошибок при валидации формы*/
+.error {
+  color:red;
+  font-size: 14px;
+}
+
+header {
+  flex: 0 0 auto;
+}
+
+.container {
+  flex: 1 0 auto;
+}
+
+footer {
+  flex: 0 0 auto;
+}
+
+/*Медиазапросы для высоты слайдера*/
+@media screen and (max-width: 992px) {
+  .slide-one {
+    height: 480px;
+  }
+
+  .slide-two {
+    height: 480px;
+  }
+
+  .slide-three {
+    height: 480px;
+  }
+}
+
+@media screen and (max-width: 576px) {
+  .slide-one {
+    height: 380px;
+  }
+
+  .slide-two {
+    height: 380px;
+  }
+
+  .slide-three {
+    height: 380px;
+  }
+}
+
+//Стили для аккордиона
+.accordion-item {
+  margin: 6px 0;
+  border: none;
+  border-radius: 6px;
+}
+
+.accordion-header {
+  border-radius: 8px;
+  overflow: hidden;
+}
+
+.accordion-header button {
+  background: #0d6efd;
+}
+
+.carousel-control-prev-icon {
+  background-image: url("assets/images/chevron-right.svg");
+  transform: rotate(180deg);
+}
+
+.carousel-control-prev {
+  left: -45px;
+}
+
+.carousel-control-next-icon {
+  background-image: url("assets/images/chevron-right.svg");
+}
+
+
+.carousel-control-next {
+  right: -45px;
+}
+
+html, body { height: 100%; }
+body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
+
+input.ng-invalid.ng-dirty,
+input.ng-invalid.ng-touched {
+  border-color: red;
+  box-shadow: 0px 0px 4px 2px rgba(255, 0, 0, 0.2);
+}
+
+.loader {
+  width: 100%;
+  height: 100%;
+  position: fixed;
+  top: 0;
+  left: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: rgba(0, 0, 0, 0.5);
+}
