@@ -1,10 +1,10 @@
 import {NgModule} from '@angular/core';
 import {CommonModule} from '@angular/common';
-
 import {OrdersRoutingModule} from './orders-routing.module';
 import {OrderComponent} from "./order.component";
 import {RouterModule} from "@angular/router";
 import {ReactiveFormsModule} from "@angular/forms";
+
 
 
 @NgModule({
@@ -15,7 +15,7 @@ import {ReactiveFormsModule} from "@angular/forms";
     CommonModule,
     RouterModule,
     ReactiveFormsModule,
-    OrdersRoutingModule
+    OrdersRoutingModule,
   ]
 })
 export class OrdersModule { }
